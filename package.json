@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "bignumber.js": "^9.1.2",
+    "ethers": "^6.7.1",
+    "node-fetch": "^2.6.6"
+  }
+}
