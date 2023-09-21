@@ -8,11 +8,14 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: 'abcd'
       MYSQL_DATABASE: TEST_DATABASE
+    ports:
+      - "3307:3306"
 
   app:
     build:
       context: .
       dockerfile: Dockerfile
+    image: munsunouk/price-store:test
     ports:
       - "3000:3000"
     depends_on:
