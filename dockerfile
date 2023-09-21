@@ -10,8 +10,6 @@ COPY package*.json ./
 RUN npm install
 
 # Copy source code to container
-# COPY ./src/*.ts ./src/
-# COPY ./app.ts .
 COPY . .
 
 # Compile TypeScript into JavaScript

@@ -7,9 +7,9 @@ const chainLinkOracleAbi = require('../../abis/ChainLinkOracle_abi.json');
 
 export class Chainlink {
 
-    name : string
-    chain : string
-    rpc_url : string
+    public name : string
+    public chain : string
+    public rpc_url : string
 
     constructor(
         name : string = "chainlink",
@@ -21,6 +21,15 @@ export class Chainlink {
         this.rpc_url = rpc_url;
     }
 
+    /**
+     * @method
+     * @name fetchTokenPrice
+     * @description Fetches the price of a specific token from a blockchain network using Chainlink oracle.
+     * @see https://docs.chain.link/
+     * @param {string} tokenSymbol - The symbol of the token (e.g., "DAI/BNB").
+     * @param {string} tokenAddress - The blockchain address of the token (e.g., "0x0630521aC362bc7A19a4eE44b57cE72Ea34AD01c").
+     * @returns {Promise<PriceData>} A promise that resolves with an object containing data about the fetched price. 
+     */
     public async fetchTokenPrice(
         tokenSymbol : string,
         tokenAddress: string,

@@ -3,8 +3,8 @@ import { PriceData, BitfinexData } from './utils';
 const fetch = require('node-fetch');
 
 export class Bitfinex {
-    name : string
-    api_url : string
+    public name : string
+    public api_url : string
 
     constructor(
         name : string = "bitfinex",
@@ -13,7 +13,16 @@ export class Bitfinex {
         this.name = name;
         this.api_url = api_url;
     }
-
+    
+    /**
+     * @method
+     * @name fetchTokenPrice
+     * @description Fetches the price of a specific token from an exchange API.
+     * @see https://docs.bitfinex.com/docs
+     * @param {string} tokenSymbol - The symbol of the token (e.g., "USDT").
+     * @param {string} tokenAddress - The symbol of the token bitfinex given (e.g., "USTUSD").
+     * @returns {Promise<PriceData>} A promise that resolves with an object containing data about the fetched price. 
+     */
     public async fetchTokenPrice(
         tokenSymbol : string,
         tokenAddress: string,
