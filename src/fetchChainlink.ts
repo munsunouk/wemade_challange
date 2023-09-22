@@ -2,7 +2,6 @@ import BigNumber from 'bignumber.js';
 import { ethers } from 'ethers';
 import { PriceData } from './utils';
 
-const assignABI = require('../../abis/Assignment_abi.json');
 const chainLinkOracleAbi = require('../../abis/ChainLinkOracle_abi.json');
 
 export class Chainlink {

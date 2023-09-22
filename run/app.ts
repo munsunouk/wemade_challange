@@ -1,6 +1,6 @@
-import { Chainlink } from './src/fetchChainlink';
-import { Bitfinex } from './src/fetchBitfinex';
-import { MySQL } from './src/storeSql';
+import { Chainlink } from '../src/fetchChainlink';
+import { Bitfinex } from '../src/fetchBitfinex';
+import { MySQL } from '../src/routeSql';
 
 import cron from 'node-cron';
 import dotenv from 'dotenv';
