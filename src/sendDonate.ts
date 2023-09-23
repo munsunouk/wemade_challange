@@ -41,17 +41,16 @@ export class Donate {
             const amountWei = ethers.parseEther(amount);
 
             const txResponse = await assignmentContract.donate({ value: amountWei });
-            console.log(`Transaction hash: ${txResponse.hash}`);
             
             // Wait for transaction confirmation
             const receipt  = await txResponse.wait();
 
             // Check the status of the transaction
             if (receipt.status === 0) {
-                throw new Error('Transaction failed');
+                throw new Error('Failed to donate on Transaction');
             }
 
-            console.log(`Transaction was confirmed in block number ${receipt.blockNumber}`);
+            console.log(`Transaction was confirmed, Transaction hash: ${txResponse.hash}`);
         } catch (error) {
             console.error(`Failed to donate: ${error}`);
         }
