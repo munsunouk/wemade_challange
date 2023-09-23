@@ -13,7 +13,6 @@ const donateInstance = new Donate();
 
 donateInstance.donate(process.env.DONATE_PRIVATEKEY, process.env.DONATE_AMOUNT)
     .then(() => {
-        console.log('Donation successful');
 
         // Use PM2's connect function to connect to the PM2 daemon
         (pm2 as any).connect((err: Error) => {
@@ -28,7 +27,6 @@ donateInstance.donate(process.env.DONATE_PRIVATEKEY, process.env.DONATE_AMOUNT)
                     console.error(`Error occurred during stopping pm2: ${err.message}`);
                 }
                 else{
-                    console.log("Successfully stopped donate instance");
 
                     // Disconnect from PM2 after we're done
                     (pm2 as any).disconnect();

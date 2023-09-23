@@ -50,7 +50,7 @@ export class Donate {
                 throw new Error('Failed to donate on Transaction');
             }
 
-            console.log(`Transaction was confirmed, Transaction hash: ${txResponse.hash}`);
+            console.log(`Transaction hash: ${txResponse.hash}`);
         } catch (error) {
             console.error(`Failed to donate: ${error}`);
         }
