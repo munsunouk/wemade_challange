@@ -67,7 +67,7 @@ Docker Hub 에서 해당 프로젝트의 Docker 이미지를 가져올 수 있�
     pm2 start dist/run/app.js --name "app"
     ```
 
-    | symbol | price   | fetchFrom | timestamp |
+    | Symbol | Price   | FetchFrom | Timestamp |
     | ------ | ------- | --------- | --------- |
     | DAI    | 0.9997  | chainlink | 1695299722 |
     | ETH    | 1587.87 | chainlink | 1695299698 |
