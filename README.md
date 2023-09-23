@@ -120,20 +120,6 @@ Docker Hub 에서 해당 프로젝트의 Docker 이미지를 가져올 수 있�
     ├─ abis
     │  ├─ Assignment_abi.json
     │  └─ ChainLinkOracle_abi.json
-    ├─ dist
-    │  ├─ api.js.map
-    │  ├─ app.js.map
-    │  ├─ donate.js.map
-    │  ├─ run
-    │  │  ├─ api.js.map
-    │  │  └─ app.js.map
-    │  └─ src
-    │     ├─ fetchBitfinex.js.map
-    │     ├─ fetchChainlink.js.map
-    │     ├─ routeApi.js.map
-    │     ├─ routeSql.js.map
-    │     ├─ sendDonate.js.map
-    │     └─ utils.js.map
     ├─ docker-compose.yml
     ├─ dockerfile
     ├─ package-lock.json
