@@ -5,6 +5,7 @@
 2. [Environment Setup](#environment-setup)
 3. [Running the Project](#running-the-project)
 4. [Usage](#usage)
+5. [Repository](#repository)
 
 <a name='prerequisites'></a>
 ## Prerequisites
@@ -109,3 +110,44 @@ Docker Hub 에서 해당 프로젝트의 Docker 이미지를 가져올 수 있�
     실행 성공 : Transaction hash:0x6116464c5b58b739a835873f5b5e13e0c9dc7f90280efa1e597f6c9ff4b76b56
 
     실행 실패 : Failed to donate
+
+<a name='repository'></a>
+##Repository
+
+    ```
+    📦 assign
+    ├─ .gitignore
+    ├─ abis
+    │  ├─ Assignment_abi.json
+    │  └─ ChainLinkOracle_abi.json
+    ├─ dist
+    │  ├─ api.js.map
+    │  ├─ app.js.map
+    │  ├─ donate.js.map
+    │  ├─ run
+    │  │  ├─ api.js.map
+    │  │  └─ app.js.map
+    │  └─ src
+    │     ├─ fetchBitfinex.js.map
+    │     ├─ fetchChainlink.js.map
+    │     ├─ routeApi.js.map
+    │     ├─ routeSql.js.map
+    │     ├─ sendDonate.js.map
+    │     └─ utils.js.map
+    ├─ docker-compose.yml
+    ├─ dockerfile
+    ├─ package-lock.json
+    ├─ package.json
+    ├─ run
+    │  ├─ api.ts
+    │  ├─ app.ts
+    │  └─ donate.ts
+    ├─ src
+    │  ├─ fetchBitfinex.ts
+    │  ├─ fetchChainlink.ts
+    │  ├─ routeApi.ts
+    │  ├─ routeSql.ts
+    │  ├─ sendDonate.ts
+    │  └─ utils.ts
+    └─ tsconfig.json
+    ```
