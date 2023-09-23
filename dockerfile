@@ -18,6 +18,5 @@ COPY . .
 # Compile TypeScript into JavaScript
 RUN npm run build
 
-# Start the application using PM2 and the ecosystem.config.js file (adjust according to where tsc outputs the compiled js file)
-CMD [ "pm2-runtime", "./ecosystem.config.js" ]
+CMD ["tail", "-f", "/dev/null"]
 

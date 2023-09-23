@@ -3,7 +3,6 @@
 ## Table of Contents
 1. [Prerequisites](#prerequisites)
 2. [Environment Setup](#environment-setup)
-3. [Running the Project](#running-the-project)
 4. [Usage](#usage)
 5. [Repository](#repository)
 
@@ -16,11 +15,6 @@
 <a name='environment-setup'></a>
 ## 환경설정
 
-    과제중 하나인 Send transaction 을 하기위해서는,
-    `.env` 파일안 'DONATE_PRIVATEKEY' 변수를 변경해주셔야 합니다.
-
-
-<a name='running-the-project'></a>
 ### Docker Image 실행
 Docker Hub 에서 해당 프로젝트의 Docker 이미지를 가져올 수 있습니다.
 
@@ -30,13 +24,18 @@ Docker Hub 에서 해당 프로젝트의 Docker 이미지를 가져올 수 있�
     docker pull munsunouk/wemade_challange:test
     ```
 
-2. Docker 실행:
+2. Docker 실행
     ```bash
-    docker-compose up
+    docker run -d --name wemade_challenge_container munsunouk/wemade_challange:test
     ```
 
-### repository Installation & Run
-해당 repository 를 통해서도 실행하실수 있습니다.
+3. Docker shell 접속
+    ```bash
+    docker exec -it wemade_challenge_container /bin/bash
+    ```
+
+### repository Installation
+해당 repository 를 통해서도 설치하실수 있습니다.
 
 1. Clone this repository:
     ```bash
@@ -54,14 +53,14 @@ Docker Hub 에서 해당 프로젝트의 Docker 이미지를 가져올 수 있�
     npm run build
     ```
 
-4. Start the application using PM2 :
-    ```bash
-    pm2 start ./ecosystem.config.js
-    ```
-
 <a name='usage'></a>
 ## Usage
+    
 1. 30초 간격으로 저장되는 가격 데이터는 MySQL 해당 데이터테이블 에서 확인하실수 있습니다.
+    
+    ```bash
+    pm2 start dist/run/app.js --name "app"
+    ```
 
     | symbol | price   | fetchFrom | timestamp |
     | ------ | ------- | --------- | --------- |
@@ -72,6 +71,10 @@ Docker Hub 에서 해당 프로젝트의 Docker 이미지를 가져올 수 있�
     | ETH    | 1589.95 | bitfinex  | 1695301410 |
 
 2. 데이터베이스에 저장된 토큰 가격을 불러오는 API 는 다음과 같이 확인하실수 있습니다.
+
+    ```bash
+    pm2 start dist/run/api.js --name "api"
+    ```
 
     GET http://localhost:3000/token-info
 
@@ -100,6 +103,10 @@ Docker Hub 에서 해당 프로젝트의 Docker 이미지를 가져올 수 있�
     ```
 
 3. Donate 실행 결과는 다음과 같이 확인하실수 있습니다.
+
+    ```bash
+    pm2 start dist/run/donate.js --privateKey=0x~ --amount=0.01 --name "donate"
+    ```
 
     실행 성공 : Transaction hash:0x6116464c5b58b739a835873f5b5e13e0c9dc7f90280efa1e597f6c9ff4b76b56
 
