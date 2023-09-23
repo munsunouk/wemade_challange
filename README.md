@@ -68,32 +68,34 @@ Docker Hub 에서 해당 프로젝트의 Docker 이미지를 가져올 수 있�
 ## Usage
 1. 30초 간격으로 저장되는 가격 데이터는 MySQL 해당 데이터테이블 에서 확인하실수 있습니다.
 
-    ```
-    symbol  price      fetchFrom    timestamp  
-    DAI     0.9997     chainlink    1695299722 
-    ETH     1587.8700  chainlink    1695299698 
-    USDT    1.0008     bitfinex     1695301410 
-    USDC    1.0007     bitfinex	    1695301410  
-    ETH    	1589.9500  bitfinex	    1695301410	
+    ```sql
+    symbol    | price   | fetchFrom | timestamp
+    --------- | ------- | --------- | ----------
+    DAI       | 0.9997  | chainlink | 1695299722 
+    ETH       | 1587.87 | chainlink | 1695299698 
+    USDT      | 1.0008  | bitfinex	| 1695301410 
+    USDC     	|	1.0007	|	bitfinex	|	1695301410  
+    ETH    	 	|	1589.95	|	bitfinex	|   1695301410
     ```
 
 2. 데이터베이스에 저장된 토큰 가격을 불러오는 API 는 다음과 같이 확인하실수 있습니다.
 
     GET http://localhost:3000/token-info
 
-    Parameters:
+    #### Parameters:
 
-    Name	    Type	Mandatory	Description
-    tokenSymbol	STRING	YES         
-    source	    STRING	NO	        source where fetch from
-    startTime	LONG	NO	        Timestamp in ms to get data from INCLUSIVE.
-    endTime	    LONG	NO	        Timestamp in ms to get data until INCLUSIVE.
-
+    | Name | Type | Mandatory | Description |
+    | ---- | ---- | --------- | ----------- |
+    | `tokenSymbol` | STRING 	| YES 	| - |
+    | `source`     	| STRING 	| NO  	| Source where price was fetched from. |
+    | `startTime`  	| LONG   	| NO  	| Timestamp in milliseconds to get data from (inclusive). |
+    | `endTime`    	| LONG   	| NO  	|int Timestamp in milliseconds to get data until (inclusive). |
 
     Response :
 
     example http://localhost:3000/token-info?tokenSymbol=DAI
 
+    ```json
     [
         {
             'symbol' : 'DAI',
@@ -102,6 +104,7 @@ Docker Hub 에서 해당 프로젝트의 Docker 이미지를 가져올 수 있�
             'timestamp' : '1695299722',
         }
     ]
+    ```
 
 3. Donate 실행 결과는 다음과 같이 확인하실수 있습니다.
 
