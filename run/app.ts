@@ -64,7 +64,6 @@ function task(): void {
     Promise.all(
         [...chainlinkPromises, ...bitfinexPromises]
         ).then((results) => {
-        console.log(results);
         
         // Call insertPriceData to store results in MySQL.
         mysql.insertPriceData(results).catch(console.error);

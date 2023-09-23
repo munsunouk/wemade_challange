@@ -26,12 +26,12 @@ Docker Hub 에서 해당 프로젝트의 Docker 이미지를 가져올 수 있�
 
 2. Docker 실행
     ```bash
-    docker run -d --name wemade_challenge_container munsunouk/wemade_challange:test
+    docker-compose up -d
     ```
 
 3. Docker shell 접속
     ```bash
-    docker exec -it wemade_challenge_container /bin/bash
+    docker exec -it wemade_challange-app-1 /bin/bash
     ```
 
 ### repository Installation

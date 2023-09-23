@@ -123,21 +123,16 @@ export class MySQL {
         const connection = await this.pool.getConnection();
         try {
             const sql = `
-                SELECT 
-                    pd1.symbol,
-                    pd1.fetchFrom,
-                    pd1.price,
-                    pd1.timestamp AS latest_timestamp
-                FROM 
-                ${this.datatable} AS pd1
-                JOIN 
-                (
-                    SELECT symbol, MAX(timestamp) AS max_timestamp
+                WITH ranked_prices AS (
+                    SELECT 
+                    symbol,
+                    fetchFrom,
+                    price,
+                    timestamp,
+                    ROW_NUMBER() OVER (PARTITION BY fetchFrom ORDER BY timestamp DESC) as rn
                     FROM ${this.datatable}
                     WHERE symbol = ?
-                    GROUP BY fetchFrom
-                ) AS pd2 
-                ON pd1.symbol = pd2.symbol AND pd1.timestamp = pd2.max_timestamp`;
+                )`;
 
             const [rows] = await connection.query(sql,[tokenSymbol]);
             return rows;
