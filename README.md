@@ -109,6 +109,6 @@ Docker Hub 에서 해당 프로젝트의 Docker 이미지를 가져올 수 있�
 3. Donate 실행 결과는 다음과 같이 확인하실수 있습니다.
 
     실행 성공 : 
-    Transaction was confirmed, Transaction hash:0x6116464c5b58b739a835873f5b5e13e0c9dc7f90280efa1e597f6c9ff4b76b56
+    Transaction hash:0x6116464c5b58b739a835873f5b5e13e0c9dc7f90280efa1e597f6c9ff4b76b56
 
     실행 실패 : Failed to donate
