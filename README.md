@@ -49,18 +49,12 @@ Docker Hub 에서 해당 프로젝트의 Docker 이미지를 가져올 수 있�
     npm install pm2 -g
     ```
 
-3. Install NPM packages:
-    ```bash
-    npm install
-    npm install pm2 -g
-    ```
-
-4. Compile TypeScript into JavaScript:
+3. Compile TypeScript into JavaScript:
     ```bash
     npm run build
     ```
 
-5. Start the application using PM2 :
+4. Start the application using PM2 :
     ```bash
     pm2 start ./ecosystem.config.js
     ```
