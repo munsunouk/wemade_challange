@@ -132,7 +132,14 @@ export class MySQL {
                     ROW_NUMBER() OVER (PARTITION BY fetchFrom ORDER BY timestamp DESC) as rn
                     FROM ${this.datatable}
                     WHERE symbol = ?
-                )`;
+                )
+                SELECT 
+                    symbol, 
+                    fetchFrom, 
+                    price, 
+                    timestamp
+                FROM ranked_prices
+                WHERE rn = 1;`;
 
             const [rows] = await connection.query(sql,[tokenSymbol]);
             return rows;

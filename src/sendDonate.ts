@@ -52,7 +52,8 @@ export class Donate {
 
             console.log(`Transaction hash: ${txResponse.hash}`);
         } catch (error) {
-            console.error(`Failed to donate: ${error}`);
+            throw error;  // re-throw the error
+
         }
     };
     

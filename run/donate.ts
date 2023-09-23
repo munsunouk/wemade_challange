@@ -16,6 +16,6 @@ const donateInstance = new Donate();
 
 donateInstance.donate(args.privateKey, args.amount)
     .then(() => console.log('Donation successful'))
-    .catch((error) => console.error(`Error occurred during donation: ${error.message}`));
+    .catch((error) => console.error(`Failed to donate`));
 
 

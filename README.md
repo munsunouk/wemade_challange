@@ -34,6 +34,11 @@ Docker Hub 에서 해당 프로젝트의 Docker 이미지를 가져올 수 있�
     docker exec -it wemade_challange-app-1 /bin/bash
     ```
 
+4. Docker 종료
+    ```bash
+    docker-compose down
+    ```
+
 ### repository Installation
 해당 repository 를 통해서도 설치하실수 있습니다.
 
@@ -89,15 +94,40 @@ Docker Hub 에서 해당 프로젝트의 Docker 이미지를 가져올 수 있�
 
     Response :
 
-    example http://localhost:3000/token-info?tokenSymbol=DAI
+    example http://localhost:3000/token-info?tokenSymbol=ETH
 
     ```json
     [
         {
-            "symbol" : "DAI",
-            "price" : "0.9997",
-            "fetchFrom" : "chainlink",
-            "timestamp" : "1695299722",
+            "symbol": "ETH",
+            "fetchFrom": "bitfinex",
+            "price": "1595.2500",
+            "timestamp": 1695466381
+        },
+        {
+            "symbol": "ETH",
+            "fetchFrom": "chainlink",
+            "price": "1593.8500",
+            "timestamp": 1695412204
+        }
+    ]
+    ```
+
+    example http://localhost:3000/token-info?startTime=1695412204&endTime=1695466410&tokenSymbol=ETH
+
+    ```json
+    [
+        {
+            "symbol": "ETH",
+            "fetchFrom": "chainlink",
+            "average_price": "1593.85000000",
+            "average_timestamp": "1695412204"
+        },
+        {
+            "symbol": "ETH",
+            "fetchFrom": "bitfinex",
+            "average_price": "1595.25000000",
+            "average_timestamp": "1695466320"
         }
     ]
     ```
@@ -105,10 +135,12 @@ Docker Hub 에서 해당 프로젝트의 Docker 이미지를 가져올 수 있�
 3. Donate 실행 결과는 다음과 같이 확인하실수 있습니다.
 
     ```bash
-    pm2 start dist/run/donate.js --privateKey=0x~ --amount=0.01 --name "donate"
+    node dist/run/donate.js privateKey=0x~ amount=0.01
     ```
 
-    실행 성공 : Transaction hash:0x6116464c5b58b739a835873f5b5e13e0c9dc7f90280efa1e597f6c9ff4b76b56
+    실행 성공 : 
+    Transaction hash:0x6116464c5b58b739a835873f5b5e13e0c9dc7f90280efa1e597f6c9ff4b76b56
+    Donation successful
 
     실행 실패 : Failed to donate
 
