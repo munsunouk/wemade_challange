@@ -16,7 +16,7 @@
 <a name='environment-setup'></a>
 ## 환경설정
 
-    해당 repository 의 root directory 에서 환경 변수를 저장하기 위해 `.env` 파일을 만듭어야 합니다.
+    해당 repository 의 root directory 에서 환경 변수를 저장하기 위해 `.env` 파일을 만들어야 합니다.
     .env 에 대한 예제는 'env_example.env' file 에 있으니 참조하여 만들어야 합니다.
 
 
