@@ -98,10 +98,10 @@ Docker Hub 에서 해당 프로젝트의 Docker 이미지를 가져올 수 있�
     ```json
     [
         {
-            'symbol' : 'DAI',
-            'price' : '0.9997',
-            'fetchFrom' : 'chainlink',
-            'timestamp' : '1695299722',
+            "symbol" : "DAI",
+            "price" : "0.9997",
+            "fetchFrom" : "chainlink",
+            "timestamp" : "1695299722",
         }
     ]
     ```
