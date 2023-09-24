@@ -18,23 +18,28 @@
 ### Docker Image 실행
 Docker Hub 에서 해당 프로젝트의 Docker 이미지를 가져올 수 있습니다.
 
-1. pull from docker hub
+1. Clone this repository:
+    ```bash
+    git clone https://github.com/munsunouk/wemade_challange.git
+    ```
+
+2. pull from docker hub
 
     ```bash
     docker pull munsunouk/wemade_challange:test
     ```
 
-2. Docker 실행
+3. Docker 실행
     ```bash
     docker-compose up -d
     ```
 
-3. Docker shell 접속
+4. Docker shell 접속
     ```bash
     docker exec -it wemade_challange-app-1 /bin/bash
     ```
 
-4. Docker 종료
+*. Docker 종료
     ```bash
     docker-compose down
     ```
@@ -45,6 +50,7 @@ Docker Hub 에서 해당 프로젝트의 Docker 이미지를 가져올 수 있�
 1. Clone this repository:
     ```bash
     git clone https://github.com/munsunouk/wemade_challange.git
+    cd ./wemade_challange
     ```
 
 2. Install NPM packages:
@@ -74,6 +80,11 @@ Docker Hub 에서 해당 프로젝트의 Docker 이미지를 가져올 수 있�
     | USDT   | 1.0008  | bitfinex  | 1695301410 |
     | USDC   | 1.0007  | bitfinex  | 1695301410 |
     | ETH    | 1589.95 | bitfinex  | 1695301410 |
+
+    *정지
+    ```bash
+    pm2 stop app
+    ```
 
 2. 데이터베이스에 저장된 토큰 가격을 불러오는 API 는 다음과 같이 확인하실수 있습니다.
 
@@ -130,6 +141,11 @@ Docker Hub 에서 해당 프로젝트의 Docker 이미지를 가져올 수 있�
             "average_timestamp": "1695466320"
         }
     ]
+    ```
+
+    *정지
+    ```bash
+    pm2 stop api
     ```
 
 3. Donate 실행 결과는 다음과 같이 확인하실수 있습니다.
