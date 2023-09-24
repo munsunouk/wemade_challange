@@ -40,7 +40,7 @@ Docker Hub 에서 해당 프로젝트의 Docker 이미지를 가져올 수 있�
     docker exec -it wemade_challange-app-1 /bin/bash
     ```
 
-*. Docker 종료
+5. Docker 종료 (실행종료시)
     ```bash
     docker-compose down
     ```
