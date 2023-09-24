@@ -21,6 +21,7 @@ Docker Hub 에서 해당 프로젝트의 Docker 이미지를 가져올 수 있�
 1. Clone this repository:
     ```bash
     git clone https://github.com/munsunouk/wemade_challange.git
+    cd ./wemade_challange
     ```
 
 2. pull from docker hub
